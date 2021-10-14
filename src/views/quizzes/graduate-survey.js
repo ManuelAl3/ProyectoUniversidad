@@ -1,5 +1,5 @@
 import Nabvar from "../../components/navbar";
-import MessageInfo from "../components/messageInfo";
+import MessageInfo from "../../components/messageInfo";
 
 export default function GraduateSurvey() {
     return(

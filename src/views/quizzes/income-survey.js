@@ -1,9 +1,8 @@
-import React, { useState } from 'react'
-import Nabvar from '../components/navbar';
-import ButtonSave from '../components/buttonSave';
-import MessageInfo from '../components/messageInfo';
+import React, { useState } from 'react';
+import Nabvar from '../../components/navbar';
+import ButtonSave from '../../components/buttonSave';
+import MessageInfo from '../../components/messageInfo';
 import formJSon from '../../form.json';
-
 
 export default function IncomeSurvey(){
     let forms = formJSon;
