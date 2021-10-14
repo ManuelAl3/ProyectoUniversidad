@@ -1,18 +1,42 @@
+import React, { useState } from 'react'
 import Nabvar from '../components/navbar';
 import ButtonSave from '../components/buttonSave';
 import MessageInfo from '../components/messageInfo';
+import formJSon from '../../form.json';
+
 
 export default function IncomeSurvey(){
+    let forms = formJSon;
+
+    const [form, setForm] = useState({});
+
+    const handleChange = e => {
+        setForm({
+            ...form,
+            [e.target.answer]: e.target.value,
+        });
+    }
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        alert('El forms se ha enviado')
+    }
+
     return (
         <>
             {/*<Nabvar />*/}
             <div className="title-main-quizz block">
-                <p className="title is-2">Encuesta de ingreso al programa de estudios de ingeniería en software</p>
+                <p> {forms.map(post => {
+                    return (
+                        <p className="title is-2">{post.titulo}</p>
+                    )
+                })} </p>
             </div>
+
             <MessageInfo />
 
             {/* Módulo de encuesta*/}
-            <form className="quizz-main m-auto" action="/save" method="POST">
+            <form className="quizz-main m-auto" action="/save" method="POST" onSubmit={handleSubmit}>
                 <div className="field is-horizontal box">
                     <div className="field-is is-normal">
                         <label name="question_id" className="label">Escuela de procedencia: <span className="span-req">*</span></label>
@@ -20,7 +44,7 @@ export default function IncomeSurvey(){
                     <div className="field-body block">
                         <div className="field">
                             <p className="control">
-                                <input name="answer" className="input is-purple" type="text" placeholder="respuesta" />
+                                <input name="answer" value={form.answer} onChange={handleChange} className="input is-purple" type="text" placeholder="respuesta" />
                             </p>
                         </div>
                     </div>
@@ -31,7 +55,7 @@ export default function IncomeSurvey(){
                     <div className="field-body block">
                         <div className="field">
                             <p className="control">
-                                <input name="answer" className="input is-purple" type="text" placeholder="respuesta" />
+                                <input name="answer" value={form.answer} onChange={handleChange} className="input is-purple" type="text" placeholder="respuesta" />
                             </p>
                         </div>
                     </div>
@@ -41,37 +65,37 @@ export default function IncomeSurvey(){
                         <div className="section-check">
                             <div className="control">
                                 <label className="radio">
-                                    <input name="answer" type="radio" value="paginas" />
+                                    <input name="answer" value={form.answer} onChange={handleChange} type="radio" value="paginas" />
                                     Páginas Web
                                 </label>
                             </div>
                             <div className="control">
                                 <label className="radio">
-                                    <input name="answer" type="radio" />
+                                    <input name="answer" value={form.answer} onChange={handleChange} type="radio" />
                                     Redes Sociales
                                 </label>
                             </div>
                             <div className="control">
                                 <label className="radio">
-                                    <input name="answer" type="radio" />
+                                    <input name="answer" value={form.answer} onChange={handleChange} type="radio" />
                                     Medios de comunicación (televisión, radio, periódico, otro)
                                 </label>
                             </div>
                             <div className="control">
                                 <label className="radio">
-                                    <input name="answer" type="radio" />
+                                    <input name="answer" value={form.answer} onChange={handleChange} type="radio" />
                                     Visita guiada programada por mi bachillerato
                                 </label>
                             </div>
                             <div className="control">
                                 <label className="radio">
-                                    <input name="answer" type="radio" />
+                                    <input name="answer" value={form.answer} onChange={handleChange} type="radio" />
                                     Pendones
                                 </label>
                             </div>
                             <div className="control">
                                 <label className="radio">
-                                    <input name="answer" type="radio" />
+                                    <input name="answer" value={form.answer} onChange={handleChange} type="radio" />
                                     Recomendación de alguien más
                                 </label>
                             </div>
@@ -83,7 +107,7 @@ export default function IncomeSurvey(){
                             <div className="field-body">
                                 <div className="field">
                                     <p className="control">
-                                        <input name="answer" className="input is-purple" type="text" placeholder="respuesta" />
+                                        <input name="answer" value={form.answer} onChange={handleChange} className="input is-purple" type="text" placeholder="respuesta" />
                                     </p>
                                 </div>
                             </div>
@@ -136,7 +160,7 @@ export default function IncomeSurvey(){
                             <div className="field-body">
                                 <div className="field">
                                     <p className="control">
-                                        <input name="answer" className="input is-purple" type="text" placeholder="respuesta" />
+                                        <input name="answer" value={form.answer} onChange={handleChange} className="input is-purple" type="text" placeholder="respuesta" />
                                     </p>
                                 </div>
                             </div>

@@ -5,6 +5,7 @@ import Signup from './views/auth/signup';
 import IncomeSurvey from './views/quizzes/income-survey';
 
 function App() {
+  
   return (
     <BrowserRouter>
       <Switch>

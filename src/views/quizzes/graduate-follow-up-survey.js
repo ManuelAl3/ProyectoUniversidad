@@ -1,5 +1,7 @@
 import Nabvar from '../components/navbar';
 import ButtonSave from '../components/buttonSave';
+import React, { memo } from 'react'
+import PropTypes from 'prop-types'
 
 export default function GraduateFollowUp(){
     return(
