@@ -1,5 +1,5 @@
-import MessageInfo from "../components/messageInfo";
-import Nabvar from "../components/navbar"
+import MessageInfo from "../../components/messageInfo";
+import Nabvar from "../../components/navbar"
 
 export default function StudentIdentification(){
     return(

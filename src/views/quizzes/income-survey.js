@@ -1,6 +1,6 @@
-import Nabvar from '../components/navbar';
-import ButtonSave from '../components/buttonSave';
-import MessageInfo from '../components/messageInfo';
+import Nabvar from '../../components/navbar';
+import ButtonSave from '../../components/buttonSave';
+import MessageInfo from '../../components/messageInfo';
 
 export default function IncomeSurvey(){
     return (

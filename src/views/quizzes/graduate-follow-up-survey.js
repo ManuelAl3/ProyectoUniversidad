@@ -1,5 +1,5 @@
-import Nabvar from '../components/navbar';
-import ButtonSave from '../components/buttonSave';
+import Nabvar from '../../components/navbar';
+import ButtonSave from '../../components/buttonSave';
 
 export default function GraduateFollowUp(){
     return(
